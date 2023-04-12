@@ -61,6 +61,7 @@ function init(){
             return d.id == cur_id;
         });
 
+        metaInfo(cur_id)
         bubbleChart(cur_id)
         Plotly.newPlot('bar', bg, layout);
     }); 
@@ -115,6 +116,7 @@ function optionChanged(selected_value){
             }
         }
 
+        metaInfo(selected_value)
         bubbleChart(selected_value)
         Plotly.newPlot('bar', bg, layout);
     });
@@ -170,4 +172,29 @@ function bubbleChart(selected_value){
 
         Plotly.newPlot('bubble', bc, layout);
     });
+};
+
+
+function metaInfo(selected_value){
+    d3.json(file).then(function(data){
+
+        var filteredData = data.metadata.filter(function(d) {
+            return d.id == selected_value;
+        });
+
+        // console.log(filteredData[0])
+        d3.select('#sample-metadata')
+        .selectAll('p').remove()
+
+
+        d3.select('#sample-metadata')
+        .append('p').text('id: ').append('text').text(filteredData[0].id)
+        .append('p').text('ethnicity: ').append('text').text(filteredData[0].ethnicity)
+        .append("p").text('gender: ').append('text').text(filteredData[0].gender)
+        .append("p").text('age: ').append('text').text(filteredData[0].location)
+        .append("p").text('location: ').append('text').text(filteredData[0].age)
+        .append("p").text('bbtype: ').append('text').text(filteredData[0].bbtype)
+        .append("p").text('wfreq: ').append('text').text(filteredData[0].wfreq)
+
+    })
 };
