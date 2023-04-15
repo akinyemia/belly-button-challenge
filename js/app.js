@@ -3,7 +3,7 @@ file = '../data/samples.json'
 function init(){
     d3.json(file).then(function(data){
         // console.log("Hello world")
-        console.log(data)
+        // console.log(data)
         
         ids = []
         let drop_menu = d3.select('#selDataset'); 
