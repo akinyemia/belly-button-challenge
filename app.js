@@ -1,4 +1,4 @@
-file = '/root/data/samples.json'
+file = '/samples.json'
 
 function init(){
     d3.json(file).then(function(data){
