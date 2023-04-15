@@ -191,8 +191,8 @@ function metaInfo(selected_value){
         .append('p').text('id: ').append('text').text(filteredData[0].id)
         .append('p').text('ethnicity: ').append('text').text(filteredData[0].ethnicity)
         .append("p").text('gender: ').append('text').text(filteredData[0].gender)
-        .append("p").text('age: ').append('text').text(filteredData[0].location)
-        .append("p").text('location: ').append('text').text(filteredData[0].age)
+        .append("p").text('age: ').append('text').text(filteredData[0].age)
+        .append("p").text('location: ').append('text').text(filteredData[0].location)
         .append("p").text('bbtype: ').append('text').text(filteredData[0].bbtype)
         .append("p").text('wfreq: ').append('text').text(filteredData[0].wfreq)
 
